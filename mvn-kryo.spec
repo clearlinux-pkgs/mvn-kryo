@@ -4,11 +4,12 @@
 #
 Name     : mvn-kryo
 Version  : 4.0.2
-Release  : 1
+Release  : 2
 URL      : https://github.com/EsotericSoftware/kryo/archive/kryo-parent-4.0.2.tar.gz
 Source0  : https://github.com/EsotericSoftware/kryo/archive/kryo-parent-4.0.2.tar.gz
-Source1  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar
-Source2  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.pom
+Source1  : https://repo.maven.apache.org/maven2/com/esotericsoftware/kryo-parent/4.0.2/kryo-parent-4.0.2.pom
+Source2  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar
+Source3  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -33,11 +34,14 @@ data components for the mvn-kryo package.
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-parent/4.0.2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-parent/4.0.2/kryo-parent-4.0.2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.pom
 
 
 %files
@@ -45,5 +49,6 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kr
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/esotericsoftware/kryo-parent/4.0.2/kryo-parent-4.0.2.pom
 /usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar
 /usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.pom
