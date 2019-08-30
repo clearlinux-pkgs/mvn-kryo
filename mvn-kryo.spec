@@ -4,7 +4,7 @@
 #
 Name     : mvn-kryo
 Version  : 4.0.2
-Release  : 3
+Release  : 4
 URL      : https://github.com/EsotericSoftware/kryo/archive/kryo-parent-4.0.2.tar.gz
 Source0  : https://github.com/EsotericSoftware/kryo/archive/kryo-parent-4.0.2.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/com/esotericsoftware/kryo-parent/4.0.2/kryo-parent-4.0.2.pom
@@ -12,6 +12,8 @@ Source2  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo-shaded/4.0.2
 Source3  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.pom
 Source4  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.20/kryo-2.20.jar
 Source5  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.20/kryo-2.20.pom
+Source6  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar
+Source7  : https://repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -63,6 +65,12 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kr
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.20
 cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.20/kryo-2.20.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -74,6 +82,8 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/kr
 /usr/share/java/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.pom
 /usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.20/kryo-2.20.jar
 /usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.20/kryo-2.20.pom
+/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar
+/usr/share/java/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.pom
 
 %files license
 %defattr(0644,root,root,0755)
